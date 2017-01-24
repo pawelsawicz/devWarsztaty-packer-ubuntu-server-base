@@ -11,6 +11,22 @@
     "region": "eu-west-1",
     "source_ami": "ami-d8f4deab",
     "instance_type": "t2.small",
-    "ssh_username": "ubuntu"
-  }]  
+    "ssh_username": "ubuntu",
+    "ami_block_device_mappings": [{
+      "device_name": "/dev/sda1",
+      "volume_type": "gp2",
+      "volume_size": 100,
+      "delete_on_termination": "true"
+    }],
+    "launch_block_device_mappings": [{
+       "device_name": "/dev/sda1",
+       "volume_size": 100,
+       "delete_on_termination": true
+    }],
+    "tags":{
+      "Consul": "Server",
+      "Nomad": "Server",
+      "Release": "Latest"
+    }
+  }]
 }
