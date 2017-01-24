@@ -1,0 +1,16 @@
+{
+  "variables": {
+    "aws_access_key": "{{env `aws_access_key`}}",
+    "aws_secret_key": "{{env `aws_secret_key`}}"
+  },
+  "builders": [{
+    "type": "amazon-ebs",
+    "ami_name": "packer-ubuntu-server-base-{{timestamp}}",
+    "access_key": "{{user `aws_access_key`}}",
+    "secret_key": "{{user `aws_secret_key`}}",
+    "region": "eu-west-1",
+    "source_ami": "ami-d8f4deab",
+    "instance_type": "t2.small",
+    "ssh_username": "ubuntu"
+  }]  
+}
