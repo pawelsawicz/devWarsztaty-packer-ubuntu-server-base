@@ -28,5 +28,9 @@
       "Nomad": "Server",
       "Release": "Latest"
     }
+  }],  
+  "provisioners": [{
+    "type": "shell",
+    "script": "server-bootstrap.sh"
   }]
 }
